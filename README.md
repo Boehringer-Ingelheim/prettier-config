@@ -5,7 +5,7 @@
 This is the shared prettier configuration used at [Boehringer Ingelheim](https://github.com/orgs/Boehringer-Ingelheim) for code formatting.
 
 [![npm version](https://img.shields.io/npm/v/@boehringer-ingelheim/prettier-config)](https://www.npmjs.com/package/@boehringer-ingelheim/prettier-config)
-![npm downloads](https://img.shields.io/npm/dm/boehringer-ingelheim/prettier-config)
+[![npm downloads](https://img.shields.io/npm/dm/@boehringer-ingelheim/prettier-config)](https://www.npmjs.com/package/@boehringer-ingelheim/prettier-config)
 [![License: Apache-2.0](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/boehringer-ingelheim/prettier-config/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/boehringer-ingelheim/prettier-config/graphs/commit-activity)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg?logo=conventional-commits)](https://conventionalcommits.org)
