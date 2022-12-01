@@ -1,0 +1,44 @@
+{
+  "name": "@boehringer-ingelheim/prettier-config",
+  "version": "1.0.0",
+  "description": "Shared prettier configuration used at Boehringer Ingelheim for code formatting",
+  "keywords": [
+    "boehringer",
+    "boehringer-ingelheim",
+    "configuration",
+    "prettier",
+    "prettierrc",
+    "prettier-config"
+  ],
+  "homepage": "https://github.com/boehringer-ingelheim/prettier-config.git",
+  "license": "MIT",
+  "author": "Boehringer Ingelheim",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boehringer-ingelheim/prettier-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boehringer-ingelheim/prettier-config/issues"
+  },
+  "scripts": {
+    "prepare": "husky install && chmod ug+x .husky/*",
+    "release": "dotenv -- semantic-release --no-ci",
+    "release:ci": "semantic-release",
+    "repair": "rimraf .git/hooks node_modules package-lock.json && npm install",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
+    "@semantic-release/changelog": "6.0.2",
+    "@semantic-release/git": "10.0.1",
+    "dotenv-cli": "6.0.0",
+    "husky": "8.0.2",
+    "rimraf": "3.0.2",
+    "semantic-release": "19.0.5"
+  }
+}
