@@ -28,7 +28,7 @@
     "prepare": "husky install && chmod ug+x .husky/*",
     "release": "dotenv -- semantic-release --no-ci",
     "release:ci": "semantic-release",
-    "repair": "rimraf .git/hooks node_modules package-lock.json && npm install",
+    "repair": "npx --no rimraf .git/hooks node_modules package-lock.json && npm install",
     "test": "node --test"
   },
   "devDependencies": {
@@ -38,7 +38,6 @@
     "@semantic-release/git": "10.0.1",
     "dotenv-cli": "6.0.0",
     "husky": "8.0.2",
-    "rimraf": "3.0.2",
     "semantic-release": "19.0.5"
   }
 }
