@@ -1,3 +1,4 @@
+/** @type {import('semantic-release').Options}  */
 module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
