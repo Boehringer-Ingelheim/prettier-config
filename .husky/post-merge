@@ -1,2 +1,2 @@
-# Install any missing dependencies since package.json changed
-git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet package.json && npm install
+# Install any missing dependencies since package.json changed, while only versions changes are ignored.
+git diff-tree -r --ignore-matching-lines="version" --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet package.json && npm install
