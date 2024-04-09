@@ -25,20 +25,20 @@
     "url": "https://github.com/boehringer-ingelheim/prettier-config/issues"
   },
   "scripts": {
-    "prepare": "husky install && chmod ug+x .husky/*",
+    "prepare": "husky",
     "release": "dotenv -- semantic-release --no-ci",
     "release:ci": "semantic-release",
     "repair": "npx --no rimraf .git/hooks node_modules package-lock.json && npm install",
     "test": "node --test"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.4.2",
-    "@commitlint/config-conventional": "17.4.2",
-    "@commitlint/types": "17.4.0",
-    "@semantic-release/changelog": "6.0.2",
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
+    "@commitlint/types": "19.0.3",
+    "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "dotenv-cli": "7.0.0",
-    "husky": "8.0.3",
-    "semantic-release": "20.1.0"
+    "dotenv-cli": "7.4.1",
+    "husky": "9.0.11",
+    "semantic-release": "23.0.7"
   }
 }

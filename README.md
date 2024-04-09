@@ -104,7 +104,7 @@ Give a ⭐️ if this project helped you!
 
 ## License
 
-Copyright © 2022 [Boehringer Ingelheim](https://github.com/boehringer-ingelheim).<br />
+Copyright © 2024 [Boehringer Ingelheim](https://github.com/boehringer-ingelheim).<br />
 This project is [MIT](https://github.com/boehringer-ingelheim/prettier-config/blob/master/LICENSE) licensed.
 
 ## Resources
