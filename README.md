@@ -1,6 +1,6 @@
 # Prettier Configuration
 
-> Prettier is an opinionated code formatter and removes all original styling and ensures that all outputted code conforms to a consistent code style across your entire codebase. - https://prettier.io/docs/en/index.html
+> Prettier is an opinionated code formatter and removes all original styling and ensures that all outputted code conforms to a consistent code style across your entire codebase. - <https://prettier.io/docs/en/index.html>
 
 This is the shared prettier configuration used at [Boehringer Ingelheim](https://github.com/orgs/Boehringer-Ingelheim) for code formatting.
 
@@ -56,6 +56,16 @@ Specify the line length that the printer will wrap on.
 printWidth: 120;
 ```
 
+### Single Quotes
+
+Use single quotes instead of double quotes. (This only applies if there are the same number of single quotes as double quotes in the string. See the [strings rationale in the prettier docs](https://prettier.io/docs/en/rationale#strings) for more information)
+
+*We have chosen single quotes over double quotes, as it is the most common option for JS/TS (open-source) projects. Reference: <https://bytearcher.com/articles/single-or-double-quotes-strings-javascript/>*
+
+```js
+singleQuote: true;
+```
+
 ## Local Development
 
 ### Install Dependencies
@@ -104,12 +114,12 @@ Give a ⭐️ if this project helped you!
 
 ## License
 
-Copyright © 2024 [Boehringer Ingelheim](https://github.com/boehringer-ingelheim).<br />
+Copyright © 2024 [Boehringer Ingelheim](https://github.com/boehringer-ingelheim).\
 This project is [MIT](https://github.com/boehringer-ingelheim/prettier-config/blob/master/LICENSE) licensed.
 
 ## Resources
 
-- https://prettier.io/
-- https://conventionalcommits.org/en/v1.0.0/
-- https://semantic-release.gitbook.io/
-- https://semver.org/
+- <https://prettier.io/>
+- <https://conventionalcommits.org/en/v1.0.0/>
+- <https://semantic-release.gitbook.io/>
+- <https://semver.org/>
