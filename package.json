@@ -1,6 +1,6 @@
 {
   "name": "@boehringer-ingelheim/prettier-config",
-  "version": "2.0.0-next.1",
+  "version": "2.0.0",
   "description": "Shared prettier configuration used at Boehringer Ingelheim for code formatting",
   "keywords": [
     "boehringer",
