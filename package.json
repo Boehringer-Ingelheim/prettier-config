@@ -32,14 +32,14 @@
     "test": "node --test"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.3.0",
-    "@commitlint/config-conventional": "19.2.2",
-    "@commitlint/types": "19.0.3",
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "@commitlint/types": "20.0.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "dotenv-cli": "7.4.2",
-    "husky": "9.0.11",
-    "prettier": "3.2.5",
-    "semantic-release": "23.0.8"
+    "dotenv-cli": "11.0.0",
+    "husky": "9.1.7",
+    "prettier": "3.7.1",
+    "semantic-release": "25.0.2"
   }
 }
