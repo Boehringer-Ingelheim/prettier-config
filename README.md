@@ -24,7 +24,7 @@ npm install --save-dev @boehringer-ingelheim/prettier-config
 Create or update the `.prettierrc.js` file in your projects root directory accordingly.
 
 ```js
-module.exports = require("@boehringer-ingelheim/prettier-config");
+module.exports = require('@boehringer-ingelheim/prettier-config');
 ```
 
 #### Extend configuration
@@ -33,7 +33,7 @@ This is not recommended as the goal is to have similar settings in all projects,
 
 ```js
 module.exports = {
-  ...require("@boehringer-ingelheim/prettier-config"),
+  ...require('@boehringer-ingelheim/prettier-config'),
   printWidth: 140,
 };
 ```
@@ -60,7 +60,7 @@ printWidth: 120;
 
 Use single quotes instead of double quotes. (This only applies if there are the same number of single quotes as double quotes in the string. See the [strings rationale in the prettier docs](https://prettier.io/docs/en/rationale#strings) for more information)
 
-*We have chosen single quotes over double quotes, as it is the most common option for JS/TS (open-source) projects. Reference: <https://bytearcher.com/articles/single-or-double-quotes-strings-javascript/>*
+_We have chosen single quotes over double quotes, as it is the most common option for JS/TS (open-source) projects. Reference: <https://bytearcher.com/articles/single-or-double-quotes-strings-javascript/>_
 
 ```js
 singleQuote: true;
@@ -90,19 +90,11 @@ npm run repair
 
 ### Release
 
-Fully automated version management and package publishing via [semantic-release](https://github.com/semantic-release). It bumps the version according to conventional commits, publishes the package to npm and release a new version to GitHub.
+> [!IMPORTANT]  
+> Manual releases are not supported to ensure consistency and security, see: <https://docs.npmjs.com/trusted-publishers>
 
-#### Automatic Release (GitHub Action) [Recommended]
-
-Make sure that the secrets `GITHUB_TOKEN` and `NPM_TOKEN` are available in GitHub repository.
-
-```sh
-npm run release:ci
-```
-
-#### Manual Release
-
-Make sure that the environment variables `GITHUB_TOKEN` and `NPM_TOKEN` are set or declared in `.env` and a productive build was previously created via `npm run build`.
+Releases are automated through GitHub Actions using [semantic-release](https://github.com/semantic-release).
+It bumps the version according to conventional commits, publishes the package to npm and release a new version to GitHub.
 
 ```sh
 npm run release
