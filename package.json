@@ -26,20 +26,17 @@
   },
   "scripts": {
     "prepare": "husky",
-    "release": "dotenv -- semantic-release --no-ci",
-    "release:ci": "semantic-release",
+    "release": "semantic-release",
     "repair": "npx --yes rimraf@6 .git/hooks node_modules package-lock.json && npm install",
     "test": "node --test"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.1.0",
-    "@commitlint/config-conventional": "20.0.0",
-    "@commitlint/types": "20.0.0",
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
+    "@commitlint/cli": "20.3.1",
+    "@commitlint/config-conventional": "20.3.1",
+    "@commitlint/types": "20.3.1",
     "dotenv-cli": "11.0.0",
     "husky": "9.1.7",
-    "prettier": "3.7.1",
+    "prettier": "3.7.4",
     "semantic-release": "25.0.2"
   }
 }
