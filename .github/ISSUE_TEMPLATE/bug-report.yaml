@@ -1,6 +1,6 @@
 name: 🐛 Bug Report
 description: Create a report to help to improve the prettier configuration
-title: "bug: "
+title: 'bug: '
 body:
   - type: checkboxes
     attributes:
