@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# build / generate output
+dist
+
 # dependencies
 /node_modules
 

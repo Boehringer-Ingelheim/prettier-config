@@ -1,5 +1,7 @@
-/** @type {import('semantic-release').Options}  */
-module.exports = {
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
+export default {
   branches: [
     'master',
     {

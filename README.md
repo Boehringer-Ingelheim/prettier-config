@@ -21,21 +21,27 @@ npm install --save-dev @boehringer-ingelheim/prettier-config
 
 ### Add the configuration
 
-Create or update the `.prettierrc.js` file in your projects root directory accordingly.
+Create or update the `prettier.config.ts` file in your projects root directory accordingly.
 
-```js
-module.exports = require('@boehringer-ingelheim/prettier-config');
+```ts
+export default '@boehringer-ingelheim/prettier-config';
 ```
 
 #### Extend configuration
 
-This is not recommended as the goal is to have similar settings in all projects, but if for some reason you need to add or change the configuration, it is possible in the following way.
+> [!NOTE]
+> This is not recommended as the goal is to have similar settings in all projects, but if for some reason you need to add or change the configuration, it is possible in the following way.
 
-```js
-module.exports = {
-  ...require('@boehringer-ingelheim/prettier-config'),
+```ts
+import boehringer from '@boehringer-ingelheim/prettier-config';
+import type { Config } from 'prettier';
+
+const config = {
+  ...boehringer,
   printWidth: 140,
-};
+} as const satisfies Config;
+
+export default config;
 ```
 
 ### Run
@@ -52,7 +58,7 @@ Opinionated Options that differ from the standard Prettier [options](https://pre
 
 Specify the line length that the printer will wrap on.
 
-```js
+```ts
 printWidth: 120;
 ```
 
@@ -62,7 +68,7 @@ Use single quotes instead of double quotes. (This only applies if there are the 
 
 _We have chosen single quotes over double quotes, as it is the most common option for JS/TS (open-source) projects. Reference: <https://bytearcher.com/articles/single-or-double-quotes-strings-javascript/>_
 
-```js
+```ts
 singleQuote: true;
 ```
 

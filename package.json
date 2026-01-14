@@ -1,7 +1,31 @@
 {
   "name": "@boehringer-ingelheim/prettier-config",
   "version": "2.0.0",
+  "type": "module",
   "description": "Shared prettier configuration used at Boehringer Ingelheim for code formatting",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boehringer-ingelheim/prettier-config.git"
+  },
+  "homepage": "https://github.com/boehringer-ingelheim/prettier-config.git",
+  "bugs": {
+    "url": "https://github.com/boehringer-ingelheim/prettier-config/issues"
+  },
+  "author": "Boehringer Ingelheim",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "boehringer",
     "boehringer-ingelheim",
@@ -10,33 +34,25 @@
     "prettierrc",
     "prettier-config"
   ],
-  "homepage": "https://github.com/boehringer-ingelheim/prettier-config.git",
-  "license": "MIT",
-  "author": "Boehringer Ingelheim",
-  "files": [
-    "index.js"
-  ],
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/boehringer-ingelheim/prettier-config.git"
-  },
-  "bugs": {
-    "url": "https://github.com/boehringer-ingelheim/prettier-config/issues"
-  },
   "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "prepare": "husky",
     "release": "semantic-release",
     "repair": "npx --yes rimraf@6 .git/hooks node_modules package-lock.json && npm install",
-    "test": "node --test"
+    "test": "tsx --test",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@commitlint/cli": "20.3.1",
     "@commitlint/config-conventional": "20.3.1",
     "@commitlint/types": "20.3.1",
+    "@types/node": "24.10.8",
     "dotenv-cli": "11.0.0",
     "husky": "9.1.7",
     "prettier": "3.7.4",
-    "semantic-release": "25.0.2"
+    "semantic-release": "25.0.2",
+    "tsdown": "0.19.0",
+    "tsx": "4.21.0"
   }
 }
