@@ -5,11 +5,11 @@
   "description": "Shared prettier configuration used at Boehringer Ingelheim for code formatting",
   "repository": {
     "type": "git",
-    "url": "https://github.com/boehringer-ingelheim/prettier-config.git"
+    "url": "https://github.com/Boehringer-Ingelheim/prettier-config.git"
   },
-  "homepage": "https://github.com/boehringer-ingelheim/prettier-config.git",
+  "homepage": "https://github.com/Boehringer-Ingelheim/prettier-config",
   "bugs": {
-    "url": "https://github.com/boehringer-ingelheim/prettier-config/issues"
+    "url": "https://github.com/Boehringer-Ingelheim/prettier-config/issues"
   },
   "author": "Boehringer Ingelheim",
   "license": "MIT",
