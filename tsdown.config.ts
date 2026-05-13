@@ -5,15 +5,15 @@ export default defineConfig({
   deps: {
     skipNodeModulesBundle: true,
   },
-  exports: true,
-  entry: ['./src/index.js'],
   dts: true,
+  entry: ['./src/index.js'],
+  exports: true,
   format: {
-    esm: {
-      target: ['es2015'],
-    },
     cjs: {
       target: ['node20'],
+    },
+    esm: {
+      target: ['es2015'],
     },
   },
 });

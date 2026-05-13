@@ -5,6 +5,7 @@ import prettier from 'prettier';
 
 /**
  * The file path is only used to help Prettier infer the parser from the file extension.
+ *
  * @see https://prettier.io/docs/options#file-path
  */
 const FILE_PATH = 'test-file.ts';
