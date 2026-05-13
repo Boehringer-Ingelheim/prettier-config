@@ -2,6 +2,9 @@ import { defineConfig } from 'tsdown';
 
 // Further information: https://tsdown.dev/options/config-file
 export default defineConfig({
+  deps: {
+    skipNodeModulesBundle: true,
+  },
   exports: true,
   entry: ['./src/index.js'],
   dts: true,
