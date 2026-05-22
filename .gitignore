@@ -17,3 +17,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore husky's internal files, but not the .husky directory itself
+.husky/_

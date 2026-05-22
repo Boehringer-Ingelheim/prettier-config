@@ -2,15 +2,20 @@ import { defineConfig } from 'tsdown';
 
 // Further information: https://tsdown.dev/options/config-file
 export default defineConfig({
-  exports: true,
-  entry: ['./src/index.js'],
+  deps: {
+    skipNodeModulesBundle: true,
+  },
   dts: true,
+  entry: ['./src/index.js'],
+  exports: true,
   format: {
-    esm: {
-      target: ['es2015'],
-    },
     cjs: {
       target: ['node20'],
     },
+    esm: {
+      target: ['es2015'],
+    },
   },
+  sourcemap: true,
+  unbundle: true,
 });

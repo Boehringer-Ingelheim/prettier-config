@@ -27,18 +27,39 @@ Create or update the `prettier.config.ts` file in your projects root directory a
 export default '@boehringer-ingelheim/prettier-config';
 ```
 
+The shared config already includes a set of Prettier plugins for common file types, so no extra plugin setup is required for those languages.
+
 #### Extend configuration
 
 > [!NOTE]
 > This is not recommended as the goal is to have similar settings in all projects, but if for some reason you need to add or change the configuration, it is possible in the following way.
 
+Add your own plugin while keeping the bundled ones:
+
 ```ts
 import boehringer from '@boehringer-ingelheim/prettier-config';
-import type { Config } from 'prettier';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
+
+import myCustomPlugin from 'prettier-plugin-my-custom-plugin';
 
 const config = {
   ...boehringer,
   printWidth: 140,
+  plugins: [...(boehringer.plugins ?? []), myCustomPlugin],
+} as const satisfies Config;
+
+export default config;
+```
+
+Disable all bundled plugins:
+
+```ts
+import boehringer from '@boehringer-ingelheim/prettier-config';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
+
+const config = {
+  ...boehringer,
+  plugins: [],
 } as const satisfies Config;
 
 export default config;
@@ -70,6 +91,59 @@ _We have chosen single quotes over double quotes, as it is the most common optio
 
 ```ts
 singleQuote: true;
+```
+
+### Plugins
+
+The configuration ships with these plugins and options:
+
+- [`prettier-plugin-groovy`](https://github.com/nice-move/prettier-plugin-groovy)
+- [`prettier-plugin-nginx`](https://github.com/jxddk/prettier-plugin-nginx)
+- [`prettier-plugin-pkg`](https://github.com/un-ts/prettier/tree/master/packages/pkg)
+- [`prettier-plugin-sh`](https://github.com/un-ts/prettier/tree/master/packages/sh)
+- [`prettier-plugin-sql`](https://github.com/un-ts/prettier/tree/master/packages/sql)
+
+  ```js
+  /** @type {import('prettier-plugin-sql').SqlBaseOptions} */
+  const prettierPluginSqlConfig = {
+    dataTypeCase: 'upper',
+    functionCase: 'upper',
+    keywordCase: 'upper',
+    language: 'postgresql',
+  };
+  ```
+
+- [`prettier-plugin-jsdoc`](https://github.com/hosseinmd/prettier-plugin-jsdoc)
+
+  ```js
+  /** @type {import('prettier-plugin-jsdoc').Options} */
+  const prettierPluginJsdocConfig = {
+    jsdocPrintWidth: 120,
+  };
+  ```
+
+> [!TIP]
+> If you extend this config and add your own plugins, merge with the existing `plugins` array instead of replacing it.
+
+```ts
+import boehringer from '@boehringer-ingelheim/prettier-config';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
+
+const config = {
+  ...boehringer,
+  jsdocPrintWidth: 80,
+  language: 'sqlite',
+} as const satisfies Config;
+
+export default config;
+```
+
+### Check Ignore Pragma
+
+Skip formatting files that start with an ignore pragma (`@noprettier` or `@noformat`).
+
+```ts
+checkIgnorePragma: true;
 ```
 
 ## Local Development
