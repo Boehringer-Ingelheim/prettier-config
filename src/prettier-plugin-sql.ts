@@ -6,4 +6,5 @@ export const PRETTIER_PLUGIN_SQL_CONFIG: SqlBaseOptions = {
   dataTypeCase: 'upper',
   functionCase: 'upper',
   keywordCase: 'upper',
+  language: 'postgresql',
 } as const;
