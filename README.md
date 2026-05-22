@@ -38,7 +38,8 @@ Add your own plugin while keeping the bundled ones:
 
 ```ts
 import boehringer from '@boehringer-ingelheim/prettier-config';
-import type { Config } from 'prettier';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
+
 import myCustomPlugin from 'prettier-plugin-my-custom-plugin';
 
 const config = {
@@ -54,7 +55,7 @@ Disable all bundled plugins:
 
 ```ts
 import boehringer from '@boehringer-ingelheim/prettier-config';
-import type { Config } from 'prettier';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
 
 const config = {
   ...boehringer,
@@ -102,20 +103,40 @@ The configuration ships with these plugins and options:
 - [`prettier-plugin-sh`](https://github.com/un-ts/prettier/tree/master/packages/sh)
 - [`prettier-plugin-sql`](https://github.com/un-ts/prettier/tree/master/packages/sql)
 
-  ```ts
-  dataTypeCase: 'upper';
-  functionCase: 'upper';
-  keywordCase: 'upper';
+  ```js
+  /** @type {import('prettier-plugin-sql').SqlBaseOptions} */
+  const prettierPluginSqlConfig = {
+    dataTypeCase: 'upper',
+    functionCase: 'upper',
+    keywordCase: 'upper',
+    language: 'postgresql',
+  };
   ```
 
 - [`prettier-plugin-jsdoc`](https://github.com/hosseinmd/prettier-plugin-jsdoc)
 
-  ```ts
-  jsdocPrintWidth: 120;
+  ```js
+  /** @type {import('prettier-plugin-jsdoc').Options} */
+  const prettierPluginJsdocConfig = {
+    jsdocPrintWidth: 120,
+  };
   ```
 
 > [!TIP]
 > If you extend this config and add your own plugins, merge with the existing `plugins` array instead of replacing it.
+
+```ts
+import boehringer from '@boehringer-ingelheim/prettier-config';
+import type { Config } from '@boehringer-ingelheim/prettier-config';
+
+const config = {
+  ...boehringer,
+  jsdocPrintWidth: 80,
+  language: 'sqlite',
+} as const satisfies Config;
+
+export default config;
+```
 
 ### Check Ignore Pragma
 
